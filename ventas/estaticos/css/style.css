@@ -1,0 +1,408 @@
+:root {
+    --ink: #26352e;
+    --muted: #718078;
+    --paper: #ffffff;
+    --line: #e2eae5;
+    --wash: #f4f7f5;
+    --green: #16845b;
+    --green-dark: #105c43;
+    --green-soft: #ddf3e8;
+    --mint: #a7dcc2;
+    --coral: #d96f5e;
+    --shadow: 0 20px 56px rgba(28, 68, 49, 0.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    color: var(--ink);
+    background:
+        radial-gradient(ellipse at 10% 8%, rgba(167, 220, 194, 0.28), transparent 34rem),
+        radial-gradient(ellipse at 95% 90%, rgba(221, 243, 232, 0.72), transparent 32rem),
+        var(--wash);
+    font-family: Inter, "Segoe UI Variable", "Avenir Next", sans-serif;
+}
+
+header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    background: linear-gradient(112deg, #105c43 0%, #16845b 68%, #25966d 100%);
+    box-shadow: 0 8px 28px rgba(16, 92, 67, 0.14);
+}
+
+header::before {
+    position: absolute;
+    top: -68px;
+    right: 16%;
+    width: 320px;
+    height: 250px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    transform: rotate(-28deg) skewX(-18deg);
+    content: "";
+}
+
+header::after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 31%;
+    height: 7px;
+    background: var(--mint);
+    content: "";
+}
+
+header h1 {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+}
+
+main {
+    width: 100%;
+    min-height: calc(100vh - 126px);
+    padding: 58px 5.5%;
+}
+
+footer {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(90deg, var(--green-dark), var(--green), var(--mint));
+}
+
+.ventas {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.76fr) minmax(0, 1.65fr);
+    max-width: 1380px;
+    min-height: 570px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: var(--paper);
+    border: 1px solid rgba(16, 92, 67, 0.08);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    animation: rise-in 520ms ease-out both;
+}
+
+.formularioVentas {
+    position: relative;
+    width: auto;
+    height: auto;
+    padding: 42px 38px;
+    overflow: hidden;
+    background: linear-gradient(155deg, #eaf7f0 0%, var(--green-soft) 100%);
+    border: 0;
+}
+
+.formularioVentas::after {
+    position: absolute;
+    right: -36px;
+    bottom: -54px;
+    width: 150px;
+    height: 150px;
+    border: 1px solid rgba(22, 132, 91, 0.16);
+    transform: rotate(35deg);
+    content: "";
+    pointer-events: none;
+}
+
+.formularioVentas::before {
+    display: block;
+    margin-bottom: 28px;
+    color: var(--green-dark);
+    content: "Nueva venta";
+    font-size: 1.8rem;
+    font-weight: 750;
+}
+
+.vistas {
+    width: auto;
+    height: auto;
+    min-width: 0;
+    padding: 46px 44px 38px;
+    background: var(--paper);
+    border: 0;
+}
+
+.vistas::before {
+    display: block;
+    width: fit-content;
+    max-width: 100%;
+    margin: 0 auto 34px;
+    padding: 13px 24px;
+    color: var(--ink);
+    content: "Productos de la venta";
+    font-size: 1.8rem;
+    font-weight: 750;
+    line-height: 1.15;
+    text-align: center;
+    background: linear-gradient(110deg, #e9f6ee 0%, #f4faf6 68%, #e8f5ed 100%);
+    border: 1px solid rgba(24, 120, 79, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 12px 30px rgba(16, 92, 67, 0.12), 0 4px 18px rgba(167, 220, 194, 0.2);
+}
+
+#formularioVentas {
+    display: grid;
+    gap: 9px;
+}
+
+label {
+    margin-top: 13px;
+    color: #426454;
+    font-size: 0.77rem;
+    font-weight: 700;
+}
+
+input {
+    width: 100%;
+    min-height: 49px;
+    padding: 0 14px;
+    color: var(--ink);
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid #d4e3da;
+    border-radius: 9px;
+    outline: none;
+    font: inherit;
+    transition: border-color 160ms ease, box-shadow 160ms ease, background 160ms ease;
+}
+
+input::placeholder {
+    color: #93a59a;
+}
+
+input:focus {
+    border-color: var(--green);
+    box-shadow: 0 0 0 3px rgba(22, 132, 91, 0.13);
+}
+
+button {
+    min-height: 47px;
+    margin-top: 16px;
+    padding: 0 18px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 750;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease, color 160ms ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(10, 42, 29, 0.2);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(22, 132, 91, 0.26);
+    outline-offset: 3px;
+}
+
+#botonAgregar {
+    color: #fff;
+    background: var(--green);
+}
+
+#botonAgregar:hover {
+    background: var(--green-dark);
+}
+
+#calcular {
+    margin-top: 3px;
+    color: var(--green-dark);
+    background: rgba(255, 255, 255, 0.72);
+    border-color: #a7cdb8;
+}
+
+#calcular:hover {
+    background: #fff;
+}
+
+#botonCancelar {
+    margin-top: 3px;
+    color: #a5483a;
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(217, 111, 94, 0.38);
+}
+
+#botonCancelar:hover {
+    color: #fff;
+    background: #b95547;
+}
+
+.botonEditar,
+.botonEliminar {
+    min-height: 34px;
+    margin: 2px 4px 2px 0;
+    padding: 0 10px;
+    font-size: 0.78rem;
+}
+
+.botonEditar {
+    color: var(--green-dark);
+    background: var(--green-soft);
+}
+
+.botonEliminar {
+    color: #fff;
+    background: #c95d4d;
+}
+
+#resultado {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 590px;
+    border-collapse: separate;
+    border-spacing: 0;
+    text-align: left;
+}
+
+thead {
+    background: var(--green-soft);
+}
+
+th {
+    padding: 14px 12px;
+    color: var(--green-dark);
+    font-size: 0.68rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+th:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+th:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+td {
+    padding: 17px 12px;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.88rem;
+}
+
+tbody tr {
+    transition: background 140ms ease;
+}
+
+tbody tr:nth-child(even) {
+    background: #fbfdfb;
+}
+
+tbody tr:hover {
+    background: #eef8f2;
+}
+
+.codigo,
+.cantidad {
+    color: var(--muted);
+}
+
+.precio-total {
+    color: var(--green);
+    font-weight: 750;
+}
+
+#totalVenta {
+    margin-top: 26px;
+    padding: 20px 18px;
+    color: var(--green-dark);
+    background: linear-gradient(110deg, #e4f4ea, #f3faf5);
+    border-left: 4px solid var(--green);
+    border-radius: 10px;
+    font-size: 1.15rem;
+    font-weight: 750;
+    text-align: right;
+}
+
+@keyframes rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 860px) {
+    main {
+        padding: 36px 4%;
+    }
+
+    .ventas {
+        grid-template-columns: minmax(250px, 0.8fr) minmax(0, 1.35fr);
+    }
+
+    .formularioVentas {
+        padding: 36px 26px;
+    }
+
+    .vistas {
+        padding: 38px 26px 30px;
+    }
+}
+
+@media (max-width: 680px) {
+    header {
+        height: 86px;
+    }
+
+    header h1 {
+        font-size: 2.1rem;
+    }
+
+    main {
+        min-height: calc(100vh - 92px);
+        padding: 22px 16px;
+    }
+
+    .ventas {
+        grid-template-columns: 1fr;
+    }
+
+    .formularioVentas,
+    .vistas {
+        padding: 30px 22px;
+    }
+
+    .vistas::before {
+        margin-bottom: 25px;
+        padding: 12px 16px;
+        font-size: 1.45rem;
+    }
+
+    table {
+        min-width: 560px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

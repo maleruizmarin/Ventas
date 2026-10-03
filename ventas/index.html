@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventas</title>
+
+    <link rel="stylesheet" href="./estaticos/css/style.css">
+
+
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Ventas</h1>
+    </header>
+
+    <main>
+
+        <section class="ventas">
+
+            <div class="formularioVentas">
+
+                <form id="formularioVentas">
+
+                    <label for="codigo">
+                        Digite código del producto
+                    </label>
+
+                    <input type="text" id="codigo" required placeholder="Código producto">
+
+                    <label for="nombre">
+                        Digite el nombre del producto
+                    </label>
+
+                    <input type="text" id="nombre" required placeholder="Nombre producto">
+
+                    <label for="precio">
+                        Digite el precio del producto
+                    </label>
+
+                    <input type="number" id="precio" required min="1" placeholder="Precio producto">
+
+                    <label for="cantidad">Digite la cantidad del producto</label>
+                    <input type="number" id="cantidad" required min="1" placeholder="Cantidad producto">
+                    <button type="submit" id="botonAgregar">Agregar</button>
+                    <button type="button" id="calcular">Calcular</button>
+                    <button type="button" id="botonCancelar">Cancelar</button>
+                </form>
+
+            </div>
+
+            <div class="vistas">
+
+                <div id="resultado">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Total</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="cuerpoTabla">
+                        </tbody>
+
+                    </table>
+
+                    <p id="totalVenta">Total de la venta: $0</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+    </footer>
+
+    <script src="./estaticos/js/ventas.js"></script>
+
+</body>
+
+</html>
